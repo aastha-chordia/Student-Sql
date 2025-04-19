@@ -16,4 +16,9 @@ public class StudentService {
             String batch = scanner.nextLine();
             System.out.print("CGPA: ");
             double cgpa = Double.parseDouble(scanner.nextLine());
-
+            dao.addStudent(new Student(name, prn, branch, batch, cgpa));
+            System.out.println("Student added successfully.");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
