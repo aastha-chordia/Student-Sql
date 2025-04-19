@@ -32,3 +32,14 @@ public class StudentDAO {
         List<Student> list = new ArrayList<>();
         Statement stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM students");
+        while (rs.next()) {
+            list.add(new Student(
+                rs.getString("name"),
+                rs.getLong("prn"),
+                rs.getString("branch"),
+                rs.getString("batch"),
+                rs.getDouble("cgpa")
+            ));
+        }
+        return list;
+    }
