@@ -22,3 +22,13 @@ public class StudentService {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
+    public void displayAllStudents() {
+        try {
+            List<Student> students = dao.getAllStudents();
+            if (students.isEmpty()) System.out.println("No students found.");
+            else students.forEach(System.out::println);
+        } catch (Exception e) {
+            System.out.println("Error fetching students.");
+        }
+    }
