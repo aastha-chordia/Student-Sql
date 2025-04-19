@@ -18,5 +18,3 @@ public class Student {
     public String getBranch() { return branch; }
     public String getBatch() { return batch; }
     public double getCgpa() { return cgpa; }
-
- 
