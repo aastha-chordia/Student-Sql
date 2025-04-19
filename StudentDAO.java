@@ -71,4 +71,13 @@ public class StudentDAO {
         if (getStudent(student.getPrn()) == null) {
             throw new StudentNotFoundException("Student not found.");
         }
-
+        String query = "UPDATE students SET name = ?, branch = ?, batch = ?, cgpa = ? WHERE prn = ?";
+        PreparedStatement stmt = connection.prepareStatement(query);
+        stmt.setString(1, student.getName());
+        stmt.setString(2, student.getBranch());
+        stmt.setString(3, student.getBatch());
+        stmt.setDouble(4, student.getCgpa());
+        stmt.setLong(5, student.getPrn());
+        stmt.executeUpdate();
+    }
+}
