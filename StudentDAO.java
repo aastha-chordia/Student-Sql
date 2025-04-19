@@ -60,3 +60,9 @@ public class StudentDAO {
         }
         return null;
     }
+
+    public void deleteStudent(long prn) throws SQLException {
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM students WHERE prn = ?");
+        stmt.setLong(1, prn);
+        stmt.executeUpdate();
+    }
