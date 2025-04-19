@@ -43,3 +43,14 @@ public class StudentService {
             System.out.println("Error searching student.");
         }
     }
+
+    public void deleteStudent(Scanner scanner) {
+        try {
+            System.out.print("Enter PRN: ");
+            long prn = Long.parseLong(scanner.nextLine());
+            dao.deleteStudent(prn);
+            System.out.println("Student deleted.");
+        } catch (Exception e) {
+            System.out.println("Error deleting student.");
+        }
+    }
