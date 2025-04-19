@@ -66,3 +66,9 @@ public class StudentDAO {
         stmt.setLong(1, prn);
         stmt.executeUpdate();
     }
+
+    public void updateStudent(Student student) throws SQLException, StudentNotFoundException {
+        if (getStudent(student.getPrn()) == null) {
+            throw new StudentNotFoundException("Student not found.");
+        }
+
