@@ -9,4 +9,9 @@ public class StudentDAO {
             connection = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/student_db", "root", "aastha123"
             );
-       
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+   
