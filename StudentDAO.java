@@ -13,5 +13,10 @@ public class StudentDAO {
             e.printStackTrace();
         }
     }
+    
+    public void addStudent(Student student) throws SQLException, StudentAlreadyExistsException {
+        if (getStudent(student.getPrn()) != null) {
+            throw new StudentAlreadyExistsException("Student with PRN already exists.");
+        }
 
-   
+       
