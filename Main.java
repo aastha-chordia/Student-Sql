@@ -20,4 +20,6 @@ public class Main {
             System.out.println("4. Delete Student");
             System.out.println("5. Update Student");
             System.out.println("6. Exit");
-            
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine();
