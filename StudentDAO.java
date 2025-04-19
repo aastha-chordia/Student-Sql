@@ -28,5 +28,7 @@ public class StudentDAO {
         stmt.setDouble(5, student.getCgpa());
         stmt.executeUpdate();
     }
-
-    
+    public List<Student> getAllStudents() throws SQLException {
+        List<Student> list = new ArrayList<>();
+        Statement stmt = connection.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM students");
