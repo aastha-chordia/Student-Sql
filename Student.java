@@ -24,4 +24,7 @@ public class Student {
     public void setBatch(String batch) { this.batch = batch; }
     public void setCgpa(double cgpa) { this.cgpa = cgpa; }
 
- 
+    public String toString() {
+        return "Name: " + name + ", PRN: " + prn + ", Branch: " + branch + ", Batch: " + batch + ", CGPA: " + cgpa;
+    }
+}
