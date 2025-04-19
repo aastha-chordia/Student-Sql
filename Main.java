@@ -32,4 +32,7 @@ public class Main {
                 case 5: service.updateStudent(scanner); break;
                 case 6: System.out.println("Exiting application."); break;
                 default: System.out.println("Invalid choice. Try again.");
-           
+            }
+        } while (choice != 6);
+    }
+}
