@@ -44,3 +44,19 @@ public class StudentDAO {
         return list;
     }
 
+    public Student getStudent(long prn) throws SQLException {
+        String query = "SELECT * FROM students WHERE prn = ?";
+        PreparedStatement stmt = connection.prepareStatement(query);
+        stmt.setLong(1, prn);
+        ResultSet rs = stmt.executeQuery();
+        if (rs.next()) {
+            return new Student(
+                rs.getString("name"),
+                rs.getLong("prn"),
+                rs.getString("branch"),
+                rs.getString("batch"),
+                rs.getDouble("cgpa")
+            );
+        }
+        return null;
+    }
