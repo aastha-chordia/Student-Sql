@@ -32,3 +32,14 @@ public class StudentService {
             System.out.println("Error fetching students.");
         }
     }
+
+    public void searchStudent(Scanner scanner) {
+        try {
+            System.out.print("Enter PRN: ");
+            long prn = Long.parseLong(scanner.nextLine());
+            Student student = dao.getStudent(prn);
+            System.out.println(student != null ? student : "Student not found.");
+        } catch (Exception e) {
+            System.out.println("Error searching student.");
+        }
+    }
