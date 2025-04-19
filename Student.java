@@ -11,4 +11,12 @@ public class Student {
         this.branch = branch;
         this.batch = batch;
         this.cgpa = cgpa;
-   
+    }
+
+    public String getName() { return name; }
+    public long getPrn() { return prn; }
+    public String getBranch() { return branch; }
+    public String getBatch() { return batch; }
+    public double getCgpa() { return cgpa; }
+
+ 
