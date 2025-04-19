@@ -54,3 +54,24 @@ public class StudentService {
             System.out.println("Error deleting student.");
         }
     }
+
+    public void updateStudent(Scanner scanner) {
+        try {
+            System.out.print("Enter PRN: ");
+            long prn = Long.parseLong(scanner.nextLine());
+            System.out.print("New Name: ");
+            String name = scanner.nextLine();
+            System.out.print("New Branch: ");
+            String branch = scanner.nextLine();
+            System.out.print("New Batch: ");
+            String batch = scanner.nextLine();
+            System.out.print("New CGPA: ");
+            double cgpa = Double.parseDouble(scanner.nextLine());
+
+            dao.updateStudent(new Student(name, prn, branch, batch, cgpa));
+            System.out.println("Student updated.");
+        } catch (Exception e) {
+            System.out.println("Error updating student.");
+        }
+    }
+}
